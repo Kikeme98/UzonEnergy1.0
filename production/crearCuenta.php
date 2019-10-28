@@ -33,8 +33,7 @@
 	// Query to send Name, Email and Password hash to the database
 	$query = "INSERT INTO usuarios (usuario, contrasenia) VALUES ('$name', '$passHash')";
 	if (mysqli_query($conn, $query)) {
-		echo "<div class='alert alert-success mt-4' role='alert'><h3>Your account has been created.</h3>
-		<a class='btn btn-outline-primary' href='login.html' role='button'>Login</a></div>";		
+		header('Location: index.php');		
 		} else {
 			echo "Error: " . $query . "<br>" . mysqli_error($conn);
 		}	
