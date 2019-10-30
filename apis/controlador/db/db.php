@@ -1,12 +1,11 @@
 <?php 
-include("conn.php");
 class db{
   private static $connection;
   private static $db;
-  private $_host	= "localhost:3310";	  
-  private $_user	= "root";		  
-  private $_pass	= "";		    
-  private $_database	= "sistemaene";   
+  private $_host	= "localhost:3306";
+  private $_user	= "root";
+  private $_pass	= "";
+  private $_database	= "sistemaene";
 
   private function __construct(){
     $this->_connection = new mysqli($this->_host, $this->_username, 

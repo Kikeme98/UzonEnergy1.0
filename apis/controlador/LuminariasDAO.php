@@ -6,7 +6,7 @@ class LuminariasDAO{
   private static $db;
 
   private function __construct(){
-      self::$db = db::getInstance()->connectDB();
+      self::$db = db::getInstance()->getConnection();
   }
 
   public static function getInstance(){
@@ -25,12 +25,11 @@ class LuminariasDAO{
     $result = $db->query($_query);
     $data = array();
     while($row = mysqli_fetch_assoc($result))$data = $row;
-    return $array;
+    return $data;
   }
 
 }
 
 ?>
-<div class="clearfix"></div>
 
 
