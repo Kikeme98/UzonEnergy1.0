@@ -1,7 +1,7 @@
 <?php
  require_once(dirname(__FILE__)."./db/db.php");
 
-class BalastrosDAO{
+class TipoAlimentacionDAO{
   private static $dao;
   private static $db;
 
@@ -16,12 +16,12 @@ class BalastrosDAO{
 		return self::$dao;
   }
 
-  public function InsertarBalastro($params){
+  public function InsertarTipoAlimentacion($params){
 
   }
 
-  public function listarBalastros(){
-    $_query = "SELECT * from balastros";
+  public function listarTipoAlimentacion(){
+    $_query = "SELECT * from tipo_alimentacion";
     $result = $db->query($_query);
     $data = array();
     while($row = mysqli_fetch_assoc($result))$data = $row;
