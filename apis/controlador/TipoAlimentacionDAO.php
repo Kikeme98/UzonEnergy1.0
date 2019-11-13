@@ -17,7 +17,12 @@ class TipoAlimentacionDAO{
   }
 
   public function InsertarTipoAlimentacion($params){
-
+    $alimentacion= $params['alimentacion'];
+    $transformadorAlimentacion= $params['transformadorAlimentacion'];
+    $medidorAlimentacion= $params['medidorAlimentacion'];
+    $query = "INSERT INTO tipo_alimentacion (alimentacion, transformador, medidor) VALUES ('$alimentacion', '$transformadorAlimentacion, '$medidorAlimentacion')";
+	  mysqli_query($conn, $query);
+	  mysqli_close($conn);
   }
 
   public function listarTipoAlimentacion(){

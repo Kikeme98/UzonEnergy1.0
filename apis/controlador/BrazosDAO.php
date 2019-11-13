@@ -17,7 +17,11 @@ class BrazosDAO{
   }
 
   public function InsertarBrazo($params){
-
+    $longitudBrazos=$params['longitudBrazos'];
+    $inclinacionBrazos=$params['inclinacionBrazos'];
+    $query = "INSERT INTO brazos (longitud, inclinacion) VALUES ('$longitudBrazos', '$inclinacionBrazos')";
+	  mysqli_query($conn, $query);
+	  mysqli_close($conn);
   }
 
   public function listarBrazos(){

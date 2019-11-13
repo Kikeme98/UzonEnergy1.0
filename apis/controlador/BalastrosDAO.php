@@ -17,7 +17,14 @@ class BalastrosDAO{
   }
 
   public function InsertarBalastro($params){
+    $tipoBalastros=$params['tipoBalastros'];
+    $factorBalastros=$params['factorBalastros'];
+    $query = "INSERT INTO balastros (tipo, factor) VALUES ('$tipoBalastros', '$factorBalastros')";
+    mysqli_query($conn, $query);
+    if(){
 
+    }
+	  mysqli_close($conn);
   }
 
   public function listarBalastros(){

@@ -17,7 +17,14 @@ class PostesDAO{
   }
 
   public function InsertarPoste($params){
-
+    $tipoPostes= $params['tipoPostes'];
+    $altura_mtsPostes= $params['alturaPostes'];
+    $arreglo_basePostes= $params['arreglo_basePost'];
+    $brazoPostes= $params['brazoPost'];
+    $posicionPostes= $params['posicionPost'];
+    $query = "INSERT INTO postes (tipo, altura_mts, arreglo_base, brazo, posicion) VALUES ('$tipoPostes', '$altura_mtsPostes', '$arreglo_basePostes', '$brazoPostes', '$posicionPostes')";
+	  mysqli_query($conn, $query);
+	  mysqli_close($conn);
   }
 
   public function listarPostes(){

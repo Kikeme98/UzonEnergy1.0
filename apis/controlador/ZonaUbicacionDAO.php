@@ -17,7 +17,12 @@ class ZonaUbicacionDAO{
   }
 
   public function InsertarZonaUbicacion($params){
-
+    $calleZona= $params['calleZona'];
+    $coloniaZona= $params['coloniaZona'];
+    $delegacionZona= $params['delegacionZona'];
+    $query = "INSERT INTO zona_ubicacion (calle, colonia, delegacion) VALUES ('$calleZona', '$coloniaZons', '$delegacionZona')";
+	  mysqli_query($conn, $query);
+	  mysqli_close($conn);
   }
 
   public function listarZonaUbicacion(){

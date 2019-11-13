@@ -17,7 +17,15 @@ class PosicionPosteDAO{
   }
 
   public function InsertarPosicionPoste($params){
-
+    $latitudPosicion=$params['latitudPosicion'];
+    $longitudPosicion=$params['longitudPosicion'];
+    $pos_xPosicion=$params['pos_xPosicion'];
+    $pos_yPosicion=$params['pos_yPosicion'];
+    $foto=$params['fotoPosicion'];
+    $fecha_censoPosicion=$params['fecha_censoPosicion'];
+    $query = "INSERT INTO posicion_poste (latitud, longitud, pos_x, pos_y, foto, fecha_censo) VALUES ('$latitudPosicion', '$longitudPosicion', '$pos_xPosicion', '$pos_yPosicion', '$fotoPosicion', '$fecha_censoPosicion')";
+	  mysqli_query($conn, $query);
+	  mysqli_close($conn);
   }
 
   public function listarPosicionPoste(){
