@@ -20,7 +20,7 @@ class ZonaUbicacionDAO{
     $calleZona= $params['calleZona'];
     $coloniaZona= $params['coloniaZona'];
     $delegacionZona= $params['delegacionZona'];
-    $query = "INSERT INTO zona_ubicacion (calle, colonia, delegacion) VALUES ('$calleZona', '$coloniaZons', '$delegacionZona')";
+    $query = "INSERT INTO zona_ubicacion (calle, colonia, delegacion) VALUES ('$calleZona', '$coloniaZona', '$delegacionZona')";
 	  mysqli_query($conn, $query);
 	  mysqli_close($conn);
   }
