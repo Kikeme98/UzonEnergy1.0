@@ -20,11 +20,15 @@ class BalastrosDAO{
     $tipoBalastros=$params['tipoBalastros'];
     $factorBalastros=$params['factorBalastros'];
     $query = "INSERT INTO balastros (tipo, factor) VALUES ('$tipoBalastros', '$factorBalastros')";
-    mysqli_query($conn, $query);
-    if(){
-
+    $resultado = mysqli_query($conn, $query);
+    if($resultado){
+      mysqli_close($conn);
+      return 1;
+    }else{
+      mysqli_close($conn);
+      return 0;
     }
-	  mysqli_close($conn);
+	  
   }
 
   public function listarBalastros(){
