@@ -21,8 +21,14 @@ class RpusDAO{
     $tarifaRpu= $params['tarifaRpu'];
     $totalRpu= $params['totalRpu'];
     $query = "INSERT INTO rpus (tipo, tarifa, total) VALUES ('$tipoRpu', '$tarifaRpu', '$totalRpu')";
-	  mysqli_query($conn, $query);
-	  mysqli_close($conn);
+	  $resultado = mysqli_query(self::$db, $query);
+    if($resultado){
+      mysqli_close(self::$db);
+      return 1;
+    }else{
+      mysqli_close(self::$db);
+      return 0;
+    }
 
   }
 

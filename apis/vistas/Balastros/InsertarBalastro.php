@@ -1,6 +1,6 @@
 <?php
-require_once((__FILE__)."../../controlador/BalastrosDAO.php");
-if($_REQUEST['method']=='POST'){
+require_once(dirname(__FILE__)."/../../controlador/BalastrosDAO.php");
+if($_SERVER['REQUEST_METHOD']=='POST'){
     $json = json_decode($_POST['json'], true);
     $params = $json;
     $respuesta = BalastrosDAO::getInstance()->InsertarBalastro($params);

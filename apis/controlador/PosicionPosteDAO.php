@@ -24,8 +24,14 @@ class PosicionPosteDAO{
     $foto=$params['fotoPosicion'];
     $fecha_censoPosicion=$params['fecha_censoPosicion'];
     $query = "INSERT INTO posicion_poste (latitud, longitud, pos_x, pos_y, foto, fecha_censo) VALUES ('$latitudPosicion', '$longitudPosicion', '$pos_xPosicion', '$pos_yPosicion', '$fotoPosicion', '$fecha_censoPosicion')";
-	  mysqli_query($conn, $query);
-	  mysqli_close($conn);
+	  $resultado = mysqli_query(self::$db, $query);
+    if($resultado){
+      mysqli_close(self::$db);
+      return 1;
+    }else{
+      mysqli_close(self::$db);
+      return 0;
+    }
   }
 
   public function listarPosicionPoste(){

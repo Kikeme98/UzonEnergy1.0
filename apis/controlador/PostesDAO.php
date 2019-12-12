@@ -22,9 +22,15 @@ class PostesDAO{
     $arreglo_basePostes= $params['arreglo_basePost'];
     $brazoPostes= $params['brazoPost'];
     $posicionPostes= $params['posicionPost'];
-    $query = "INSERT INTO postes (tipo, altura_mts, arreglo_base, brazo, posicion) VALUES ('$tipoPostes', '$altura_mtsPostes', '$arreglo_basePostes', '$brazoPostes', '$posicionPostes')";
-	  mysqli_query($conn, $query);
-	  mysqli_close($conn);
+    $query = "INSERT INTO postes (tipo, altura_mts, arreglo_base, brazo, posicion) VALUES ('$tipoPostes', $altura_mtsPostes, '$arreglo_basePostes', '$brazoPostes', '$posicionPostes')";
+	  $resultado = mysqli_query(self::$db, $query);
+    if($resultado){
+      mysqli_close(self::$db);
+      return 1;
+    }else{
+      mysqli_close(self::$db);
+      return 0;
+    }
   }
 
   public function listarPostes(){
