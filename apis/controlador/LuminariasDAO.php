@@ -22,9 +22,9 @@ class LuminariasDAO{
 
   public function listarLuminarias(){
     $_query = "SELECT * from luminarias";
-    $result = $db->query($_query);
+    $result = self::$db->query($_query);
     $data = array();
-    while($row = mysqli_fetch_assoc($result))$data = $row;
+    while($row = mysqli_fetch_assoc($result))$data[] = $row;
     return $data;
   }
 

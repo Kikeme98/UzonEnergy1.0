@@ -32,9 +32,9 @@ class BrazosDAO{
 
   public function listarBrazos(){
     $_query = "SELECT * from brazos";
-    $result = $db->query($_query);
+    $result = self::$db->query($_query);
     $data = array();
-    while($row = mysqli_fetch_assoc($result))$data = $row;
+    while($row = mysqli_fetch_assoc($result))$data[] = $row;
     return $data;
   }
 

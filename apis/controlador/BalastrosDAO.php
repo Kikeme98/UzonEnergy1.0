@@ -33,9 +33,9 @@ class BalastrosDAO{
 
   public function listarBalastros(){
     $_query = "SELECT * from balastros";
-    $result = $db->query($_query);
+    $result = self::$db->query($_query);
     $data = array();
-    while($row = mysqli_fetch_assoc($result))$data = $row;
+    while($row = mysqli_fetch_assoc($result))$data[] = $row;
     return $data;
   }
 

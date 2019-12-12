@@ -33,9 +33,9 @@ class TipoAlimentacionDAO{
 
   public function listarTipoAlimentacion(){
     $_query = "SELECT * from tipo_alimentacion";
-    $result = $db->query($_query);
+    $result = self::$db->query($_query);
     $data = array();
-    while($row = mysqli_fetch_assoc($result))$data = $row;
+    while($row = mysqli_fetch_assoc($result))$data[] = $row;
     return $data;
   }
 
