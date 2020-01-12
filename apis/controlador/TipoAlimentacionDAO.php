@@ -41,4 +41,18 @@ class TipoAlimentacionDAO{
 
 }
 
+public function EliminarTipoAlimentacion($params){
+  $idTipoAlimentacion=$params['idTipoAlimentacion'];
+  $query = "DELETE FROM tipo_alimentacion WHERE ('id'='$idTipoAlimentacion')";
+  $resultado = mysqli_query(self::$db, $query);
+  if($resultado){
+    mysqli_close(self::$db);
+    return 1;
+  }else{
+    mysqli_close(self::$db);
+    return 0;
+  }
+  
+}
+
 ?>

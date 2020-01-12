@@ -41,4 +41,18 @@ class ZonaUbicacionDAO{
 
 }
 
+public function EliminarZonaUbicacion($params){
+  $idZonaUbicacion=$params['idZonaUbicacion'];
+  $query = "DELETE FROM zona_ubicacion WHERE ('id'='$idZonaUbicacion')";
+  $resultado = mysqli_query(self::$db, $query);
+  if($resultado){
+    mysqli_close(self::$db);
+    return 1;
+  }else{
+    mysqli_close(self::$db);
+    return 0;
+  }
+  
+}
+
 ?>

@@ -41,4 +41,18 @@ class BalastrosDAO{
 
 }
 
+public function EliminarBalastro($params){
+  $idBalastros=$params['idBalastros'];
+  $query = "DELETE FROM balastros WHERE ('id'='$idBalastros')";
+  $resultado = mysqli_query(self::$db, $query);
+  if($resultado){
+    mysqli_close(self::$db);
+    return 1;
+  }else{
+    mysqli_close(self::$db);
+    return 0;
+  }
+  
+}
+
 ?>

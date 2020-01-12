@@ -30,6 +30,20 @@ class LuminariasDAO{
 
 }
 
+public function EliminarLuminaria($params){
+  $idLuminarias=$params['idLuminarias'];
+  $query = "DELETE FROM luminarias WHERE ('id'='$idLuminarias')";
+  $resultado = mysqli_query(self::$db, $query);
+  if($resultado){
+    mysqli_close(self::$db);
+    return 1;
+  }else{
+    mysqli_close(self::$db);
+    return 0;
+  }
+  
+}
+
 ?>
 
 

@@ -40,4 +40,18 @@ class BrazosDAO{
 
 }
 
+public function EliminarBrazo($params){
+  $idBrazos=$params['idBrazos'];
+  $query = "DELETE FROM brazos WHERE ('id'='$idBrazos')";
+  $resultado = mysqli_query(self::$db, $query);
+  if($resultado){
+    mysqli_close(self::$db);
+    return 1;
+  }else{
+    mysqli_close(self::$db);
+    return 0;
+  }
+  
+}
+
 ?>

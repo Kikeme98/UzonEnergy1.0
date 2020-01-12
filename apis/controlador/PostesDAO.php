@@ -43,4 +43,18 @@ class PostesDAO{
 
 }
 
+public function EliminarPoste($params){
+  $idPostes=$params['idPostes'];
+  $query = "DELETE FROM postes WHERE ('id'='$idPostes')";
+  $resultado = mysqli_query(self::$db, $query);
+  if($resultado){
+    mysqli_close(self::$db);
+    return 1;
+  }else{
+    mysqli_close(self::$db);
+    return 0;
+  }
+  
+}
+
 ?>

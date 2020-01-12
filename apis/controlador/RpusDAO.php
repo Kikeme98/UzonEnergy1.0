@@ -42,4 +42,18 @@ class RpusDAO{
 
 }
 
+public function EliminarRpu($params){
+  $idRpus=$params['idRpus'];
+  $query = "DELETE FROM rpus WHERE ('id'='$idRpus')";
+  $resultado = mysqli_query(self::$db, $query);
+  if($resultado){
+    mysqli_close(self::$db);
+    return 1;
+  }else{
+    mysqli_close(self::$db);
+    return 0;
+  }
+  
+}
+
 ?>

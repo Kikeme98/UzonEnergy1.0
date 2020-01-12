@@ -30,4 +30,18 @@ class UsuariosDAO{
 
 }
 
+public function EliminarUsuario($params){
+  </*$idUsuario=$params['idUsuario'];
+  $query = "DELETE FROM usuarios WHERE ('id'='$idUsuario')";
+  $resultado = mysqli_query(self::$db, $query);
+  if($resultado){
+    mysqli_close(self::$db);
+    return 1;
+  }else{
+    mysqli_close(self::$db);
+    return 0;
+  }*/>
+  
+}
+
 ?>
